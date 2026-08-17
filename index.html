@@ -8,6 +8,99 @@
     <title>Saketh Reddy - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        
+
+    /* Your existing CSS */
+
+    /* Projects Section */
+    .projects {
+        padding: 100px 0;
+    }
+
+    /* Your other CSS */
+
+
+    /* Certifications & Internships */
+    .certifications,
+    .internships {
+        padding: 100px 0;
+    }
+
+    .certifications-grid,
+    .internships-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .certification-card,
+    .internship-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .certification-card:hover,
+    .internship-card:hover {
+        border-color: var(--accent);
+        box-shadow: 0 20px 50px rgba(0, 212, 255, 0.12);
+        transform: translateY(-8px);
+    }
+
+    .certificate-image,
+    .internship-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+        background: #111827;
+    }
+
+    .certification-content,
+    .internship-content {
+        padding: 25px;
+    }
+
+    .certification-content h3,
+    .internship-content h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .certification-content p,
+    .internship-content p {
+        color: var(--text-secondary);
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 8px;
+    }
+
+    .card-button {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 18px;
+        background: linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        transition: 0.3s ease;
+    }
+
+    .card-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+    }
+
+
         :root {
             --primary: #0066cc;
             --primary-dark: #0052a3;
@@ -597,6 +690,8 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            
         </ul>
     </nav>
 
@@ -608,6 +703,7 @@
             <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                <a href="#certifications" class="btn btn-secondary">Certifications</a>
             </div>
         </div>
         <div class="scroll-indicator">↓</div>
@@ -719,7 +815,84 @@
             </div>
         </div>
     </section>
+<!-- Certifications and internships Section -->
+<section id="certifications" class="container certifications">
 
+    <h2 class="section-title">Certifications and Internships</h2>
+
+    <div class="certifications-grid">
+
+        <!-- Certification 1 -->
+        <div class="certification-card">
+
+            <!-- Replace certificate1.jpg with your photo -->
+            <img src="python.jpeg"
+                 alt="Certification Certificate"
+                 class="certificate-image">
+
+            <div class="certification-content">
+                <h3>Python Certification</h3>
+
+                <p><strong>Issued By:</strong> Dhaaps</p>
+                <p><strong>Date:</strong> 17/01/2025</p>
+
+                <a href="python.jpeg"
+                   target="_blank"
+                   class="card-button">
+                    View Certificate →
+                </a>
+            </div>
+
+        </div>
+
+
+        <!-- Certification 2 -->
+        <div class="certification-card">
+
+            <img src="webdevelopment.jpeg"
+                 alt="Web Development Internship"
+                 class="certificate-image">
+
+            <div class="certification-content">
+                <h3>Web Development Internship</h3>
+
+                <p><strong>Issued By:</strong> Pinnacle Labs</p>
+                <p><strong>Date:</strong> 15/07/2026</p>
+
+                <a href="webdevelopment.jpeg"
+                   target="_blank"
+                   class="card-button">
+                    View Certificate →
+                </a>
+            </div>
+
+        </div>
+
+
+        <!-- Certification 3 -->
+        <div class="certification-card">
+
+            <img src="sql.png"
+                 alt="Certification Certificate"
+                 class="certificate-image">
+
+            <div class="certification-content">
+                <h3>SQL Certification</h3>
+
+                <p><strong>Issued By:</strong> HackerRank</p>
+                <p><strong>Date:</strong> 06/08/2026</p>
+
+                <a href="sql.png"
+                   target="_blank"
+                   class="card-button">
+                    View Certificate →
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
     <!-- Skills Section -->
     <section id="skills" class="container">
         <h2 class="section-title">Skills & Expertise</h2>
@@ -729,7 +902,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>Python</span>
-                        <span class="skill-level">Advanced</span>
+                        <span class="skill-level"></span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 90%"></div>
@@ -738,7 +911,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>JavaScript</span>
-                        <span class="skill-level">Advanced</span>
+                        <span class="skill-level"></span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 85%"></div>
@@ -747,7 +920,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>Java</span>
-                        <span class="skill-level">Intermediate</span>
+                        <span class="skill-level"></span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 75%"></div>
@@ -756,7 +929,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>SQL</span>
-                        <span class="skill-level">Advanced</span>
+                        <span class="skill-level"></span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 88%"></div>
@@ -769,7 +942,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>HTML5 & CSS3</span>
-                        <span class="skill-level">Advanced</span>
+                        <span class="skill-level"></span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 92%"></div>
@@ -778,7 +951,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>React</span>
-                        <span class="skill-level">Intermediate</span>
+                        <span class="skill-level"></span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 70%"></div>
@@ -787,7 +960,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>Flask</span>
-                        <span class="skill-level">Intermediate</span>
+                        <span class="skill-level"></span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 78%"></div>
@@ -796,7 +969,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>Responsive Design</span>
-                        <span class="skill-level">Advanced</span>
+                        <span class="skill-level"></span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 90%"></div>
@@ -809,7 +982,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>Git & GitHub</span>
-                        <span class="skill-level">Advanced</span>
+                        <span class="skill-level"></span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 85%"></div>
@@ -818,7 +991,7 @@
                 <div class="skill-item">
                     <div class="skill-name">
                         <span>VS Code</span>
-                        <span class="skill-level">Advanced</span>
+                        <span class="skill-level"></span>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-progress" style="width: 88%"></div>
@@ -851,7 +1024,6 @@
     <footer class="container">
         <p>&copy; 2024 Pingili Saketh Reddy. All rights reserved.</p>
     </footer>
-
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -907,4 +1079,10 @@
                 if (link.getAttribute('href').slice(1) === current) {
                     link.style.color = 'var(--accent)';
                 }
-            }
+            });
+        });
+            </script>
+
+</body>
+</html> 
+
