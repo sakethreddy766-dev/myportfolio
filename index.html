@@ -8,18 +8,59 @@
     <title>Saketh Reddy - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        
-
-    /* Your existing CSS */
-
     /* Projects Section */
     .projects {
         padding: 100px 0;
     }
 
-    /* Your other CSS */
+    /* Leetcode */
+     
+.leetcode-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
 
+.leetcode-card {
+    background: #3a4a504e;
+    color: #00d4ff;
+    border: 1px solid #476267;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.leetcode-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.leetcode-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.leetcode-card p {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .leetcode-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .leetcode-stats {
+        grid-template-columns: 1fr;
+    }
+}
     /* Certifications & Internships */
     .certifications,
     .internships {
@@ -819,6 +860,47 @@
             </div>
         </div>
     </section>
+
+<!--Leetcode -->
+    <section id="leetcode" class="container leetcode">
+
+    <h2 class="section-title">LeetCode & DSA Progress</h2><br>
+
+    <div class="leetcode-profile">
+        <p>
+            Practicing Data Structures & Algorithms on LeetCode
+        </p>
+
+        <a href="https://leetcode.com/u/SakethReddy766/" target="_blank" class="leetcode-profile-link">
+            View LeetCode Profile →
+        </a>
+    </div>
+
+    <div class="leetcode-stats">
+
+        <div class="leetcode-card">
+    <h3 id="totalSolved">--</h3>
+    <p>Problems Solved</p>
+</div>
+
+<div class="leetcode-card">
+    <h3 id="easySolved">--</h3>
+    <p>Easy</p>
+</div>
+
+<div class="leetcode-card">
+    <h3 id="mediumSolved">--</h3>
+    <p>Medium</p>
+</div>
+
+<div class="leetcode-card">
+    <h3 id="hardSolved">--</h3>
+    <p>Hard</p>
+</div>
+    </div>
+
+</section>
+
 <!-- Certifications and internships Section -->
 <section id="certifications" class="container certifications">
 
@@ -1076,6 +1158,50 @@
                 }
             });
         });
+        //Leetcode
+        async function loadLeetCodeStats() {
+
+    const username = "SakethReddy766";
+
+    try {
+
+        const response = await fetch(
+            `https://alfa-leetcode-api.onrender.com/${username}/solved`
+        );
+
+        if (!response.ok) {
+            throw new Error("API Error: " + response.status);
+        }
+
+        const data = await response.json();
+
+        console.log("LeetCode Stats:", data);
+
+        document.getElementById("totalSolved").textContent =
+            data.solvedProblem;
+
+        document.getElementById("easySolved").textContent =
+            data.easySolved;
+
+        document.getElementById("mediumSolved").textContent =
+            data.mediumSolved;
+
+        document.getElementById("hardSolved").textContent =
+            data.hardSolved;
+
+    } catch (error) {
+
+        console.error("LeetCode Stats Error:", error);
+
+        document.getElementById("totalSolved").textContent = "--";
+        document.getElementById("easySolved").textContent = "--";
+        document.getElementById("mediumSolved").textContent = "--";
+        document.getElementById("hardSolved").textContent = "--";
+    }
+}
+
+loadLeetCodeStats();
+
             </script>
 
 </body>
